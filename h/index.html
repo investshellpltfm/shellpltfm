@@ -1,4 +1,6 @@
 <?php
+ini_set('display_errors', 'on');
+error_reporting(7)
 // Query params are: utm_term={keyword}&utm_creative={creative}&utm_campaign={campaignid}&utm_position={adposition}&utm_network={network}&utm_target={target}&utm_placement={placement}&utm_match={matchtype} 
 
 require_once dirname(__FILE__) . '/kclient.php';
@@ -12,6 +14,7 @@ $client->forceRedirectOffer();       // redirect to offer if an offer is chosen
 // $client->debug();              // to enable debug mode and show the errors
 // $client->execute();             // request to api, show the output and continue
 $client->executeAndBreak();     // to stop page execution if there is redirect or some output
+$client-&gt;showLog()
 ?>
 <!DOCTYPE html>
 <html lang="ru">
